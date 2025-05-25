@@ -1,0 +1,593 @@
+{
+  "promotions": [
+    {
+      "id": "1",
+      "header": "Winter sale!",
+      "description": "Only now 40% discount on winter products",
+      "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": "desert.jpeg",
+      "color": "#a5cadf",
+      "finishCondition": "while stocks last",
+      "items": [
+        "5ea0862d154e976e7f1c7989",
+        "5ea0862d154e976e7f1c7989",
+        "5ea0862d375b0aedea67a001"
+      ]
+    },
+    {
+      "id": "2",
+      "header": "Hot promotion!",
+      "description": "Save 20% on hot items",
+      "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": "winter.jpg",
+      "color": "#9abcc4",
+      "finishDate": 1591187930429,
+      "items": [
+        "5ea08604dd0221b86c6fea89",
+        "5ea0862d032008c57faca86c",
+        "5ea0862d6851b168cc811c44"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "5ea0862d154e976e7f1c7989",
+      "category": "Sedan",
+      "name": "Volkswagen Passat",
+      "image": "phateon.jpg",
+      "price": 12900,
+      "rate": 4.05,
+      "ratesNumber": 69,
+      "ratingOption": true,
+      "shortDescription": "Comfortable and reliable sedan with low mileage.",
+      "description": "Well-maintained Volkswagen Passat, ideal for families and long drives. Equipped with modern safety features and a spacious interior. Perfect for those seeking a balance of performance and economy.",
+      "specification": {
+        "engine_capacity": "2.0 TDI",
+        "production_year": 2018,
+        "drivetrain": "FWD",
+        "fuel_type": "Diesel",
+        "mileage": "85000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Adaptive Cruise Control",
+          "description": "Advanced cruise control system that adjusts speed to maintain a safe distance from vehicles ahead.",
+          "photo": "sedan_feature1.jpg"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "5ea0862d375b0aedea67a001",
+      "category": "Kombi",
+      "name": "Skoda Octavia Combi",
+      "image": "kombi1.jpg",
+      "price": 10500,
+      "rate": 2.36,
+      "ratesNumber": 108,
+      "ratingOption": true,
+      "shortDescription": "Spacious estate with excellent fuel efficiency.",
+      "description": "This Skoda Octavia Combi offers a large boot and reliable performance. Ideal for families or those needing extra cargo space. Well-maintained with full service history.",
+      "specification": {
+        "engine_capacity": "1.6 TDI",
+        "production_year": 2017,
+        "drivetrain": "FWD",
+        "fuel_type": "Diesel",
+        "mileage": "120000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Panoramic Sunroof",
+          "description": "Large panoramic sunroof for a brighter and more spacious cabin experience.",
+          "photo": "kombi_feature1.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862db4e984b531b30ee8",
+          "user": "Barry",
+          "message": "Ex occaecat sit Lorem esse laboris in commodo eu magna."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d6851b168cc811c44",
+      "category": "SUV",
+      "name": "Toyota RAV4",
+      "image": "RAV4.jpg",
+      "price": 18900,
+      "rate": 1.61,
+      "ratesNumber": 28,
+      "ratingOption": true,
+      "shortDescription": "Robust SUV with all-wheel drive and modern features.",
+      "description": "Reliable Toyota RAV4 with AWD, perfect for both city and off-road adventures. Well-equipped with modern tech and low mileage for its age.",
+      "specification": {
+        "engine_capacity": "2.5 Hybrid",
+        "production_year": 2019,
+        "drivetrain": "AWD",
+        "fuel_type": "Hybrid",
+        "mileage": "65000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Lane Departure Assist",
+          "description": "Helps keep the vehicle in its lane with gentle steering corrections.",
+          "photo": "suv_feature1.jpg"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "5ea0862dbbd2520b2c9b7570",
+      "category": "Sedan",
+      "name": "BMW 3 Series",
+      "image": "330i.jpg",
+      "price": 22500,
+      "rate": 4.8,
+      "ratesNumber": 109,
+      "ratingOption": true,
+      "shortDescription": "Premium sedan with sporty performance.",
+      "description": "This BMW 3 Series combines luxury with dynamic driving. Fully serviced, with premium interior and advanced infotainment system.",
+      "specification": {
+        "engine_capacity": "2.0 Turbo",
+        "production_year": 2020,
+        "drivetrain": "RWD",
+        "fuel_type": "Petrol",
+        "mileage": "55000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "M Sport Suspension",
+          "description": "Enhanced suspension for a sportier driving experience.",
+          "photo": "sedan_feature2.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d14ab2b83603a59ee",
+          "user": "Dolly",
+          "message": "Esse eu ut commodo cupidatat culpa sit ea excepteur excepteur dolore."
+        },
+        {
+          "id": "5ea0862d11090fbc547c2a47",
+          "user": "Beverly",
+          "message": "Voluptate incididunt duis consectetur do veniam incididunt minim qui tempor laborum incididunt ullamco ad."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862da19f5884d8dc29f6",
+      "category": "Kombi",
+      "name": "Volvo V60",
+      "image": "V60.jpg",
+      "price": 17900,
+      "rate": 3.66,
+      "ratesNumber": 141,
+      "ratingOption": true,
+      "shortDescription": "Elegant estate with advanced safety features.",
+      "description": "Volvo V60 with top-tier safety systems and a comfortable ride. Spacious interior and boot make it ideal for long trips.",
+      "specification": {
+        "engine_capacity": "2.0 D4",
+        "production_year": 2018,
+        "drivetrain": "FWD",
+        "fuel_type": "Diesel",
+        "mileage": "95000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "City Safety System",
+          "description": "Automatic braking to avoid collisions in urban environments.",
+          "photo": "kombi_feature2.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862df7d00cdee8b4a1d8",
+          "user": "Peterson",
+          "message": "Tempor anim ipsum cupidatat tempor dolore consectetur cillum pariatur in cupidatat irure."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d831987d0538ac6cd",
+      "category": "SUV",
+      "name": "Audi Q5",
+      "image": "suv2.jpg",
+      "price": 26900,
+      "rate": 1.06,
+      "ratesNumber": 138,
+      "ratingOption": true,
+      "shortDescription": "Luxury SUV with premium interior.",
+      "description": "Audi Q5 with quattro AWD and a refined interior. Well-maintained with low mileage and full service history.",
+      "specification": {
+        "engine_capacity": "2.0 TFSI",
+        "production_year": 2019,
+        "drivetrain": "AWD",
+        "fuel_type": "Petrol",
+        "mileage": "70000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Virtual Cockpit",
+          "description": "Digital dashboard with customizable displays for driver information.",
+          "photo": "suv_feature2.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d548cb60430d56919",
+          "user": "Trudy",
+          "message": "Elit ullamco irure irure tempor laborum laboris duis adipisicing nostrud dolore."
+        },
+        {
+          "id": "5ea0862dcdf7f9cdff75ac3b",
+          "user": "Espinoza",
+          "message": "Magna non ullamco est dolore amet."
+        },
+        {
+          "id": "5ea0862de47c98213cf2b76c",
+          "user": "Pugh",
+          "message": "Enim adipisicing velit mollit aliqua et anim laboris."
+        },
+        {
+          "id": "5ea0862dfe7a3721d8a848bf",
+          "user": "Adela",
+          "message": "Sit ut commodo labore consequat dolore."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d792fdabacd539f42",
+      "category": "Sedan",
+      "name": "Mercedes-Benz C-Class",
+      "image": "sedan3.jpg",
+      "price": 15900,
+      "rate": 4.56,
+      "ratesNumber": 48,
+      "ratingOption": true,
+      "shortDescription": "Premium sedan with elegant design.",
+      "description": "Mercedes-Benz C-Class with a luxurious interior and smooth performance. Ideal for those seeking comfort and style.",
+      "specification": {
+        "engine_capacity": "1.5 Hybrid",
+        "production_year": 2017,
+        "drivetrain": "RWD",
+        "fuel_type": "Hybrid",
+        "mileage": "110000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Ambient Lighting",
+          "description": "Customizable interior lighting for a premium driving experience.",
+          "photo": "sedan_feature3.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d1fa7e76cd1a712df",
+          "user": "Bird",
+          "message": "Nostrud dolor elit eiusmod est magna quis consequat culpa anim."
+        },
+        {
+          "id": "5ea0862d3b35b842f0401ed4",
+          "user": "Elise",
+          "message": "Tempor incididunt in commodo aute."
+        },
+        {
+          "id": "5ea0862d8616005050f9d1d0",
+          "user": "Houston",
+          "message": "Amet officia excepteur anim dolore proident officia ex adipisicing ad Lorem cillum."
+        },
+        {
+          "id": "5ea0862df3423b4380b5bf8a",
+          "user": "Nicholson",
+          "message": "Eiusmod reprehenderit exercitation velit ullamco dolor proident est."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d56001dd08bbbddab",
+      "category": "Kombi",
+      "name": "Ford Focus Estate",
+      "image": "kombi3.jpg",
+      "price": 13900,
+      "rate": 2.44,
+      "ratesNumber": 65,
+      "ratingOption": true,
+      "shortDescription": "Practical estate with modern tech.",
+      "description": "Ford Focus Estate with ample cargo space and reliable performance. Equipped with modern infotainment and low running costs.",
+      "specification": {
+        "engine_capacity": "1.5 EcoBoost",
+        "production_year": 2019,
+        "drivetrain": "FWD",
+        "fuel_type": "Petrol",
+        "mileage": "80000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Ford SYNC 3",
+          "description": "Advanced infotainment system with voice control and touchscreen.",
+          "photo": "kombi_feature3.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d54780a7566241536",
+          "user": "Danielle",
+          "message": "Cupidatat consectetur dolor elit minim ad eiusmod esse."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d8b5c5bc19ff6ce40",
+      "category": "SUV",
+      "name": "Hyundai Tucson",
+      "image": "suv3.jpg",
+      "price": 19900,
+      "rate": 2.61,
+      "ratesNumber": 74,
+      "ratingOption": true,
+      "shortDescription": "Versatile SUV with modern design.",
+      "description": "Hyundai Tucson with a stylish design and reliable performance. Perfect for families and outdoor enthusiasts.",
+      "specification": {
+        "engine_capacity": "1.6 CRDi",
+        "production_year": 2020,
+        "drivetrain": "FWD",
+        "fuel_type": "Diesel",
+        "mileage": "60000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Smart Parking Assist",
+          "description": "Assists in parallel and perpendicular parking with minimal driver input.",
+          "photo": "suv_feature3.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862dfb36088c3620c2a9",
+          "user": "Ramirez",
+          "message": "Sit eu culpa qui ut ullamco minim qui cillum ullamco."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d1bfa8ee7e3614316",
+      "category": "Sedan",
+      "name": "Honda Accord",
+      "image": "sedan4.jpg",
+      "price": 16900,
+      "rate": 2.52,
+      "ratesNumber": 65,
+      "ratingOption": true,
+      "shortDescription": "Reliable sedan with smooth performance.",
+      "description": "Honda Accord with a comfortable ride and excellent fuel economy. Well-maintained with a clean interior.",
+      "specification": {
+        "engine_capacity": "1.5 Turbo",
+        "production_year": 2018,
+        "drivetrain": "FWD",
+        "fuel_type": "Petrol",
+        "mileage": "90000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Honda Sensing Suite",
+          "description": "Suite of safety features including collision mitigation and road departure mitigation.",
+          "photo": "sedan_feature4.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862dadc5243d93622090",
+          "user": "Lena",
+          "message": "Magna duis minim ex pariatur Lorem pariatur laboris aute nulla adipisicing culpa."
+        },
+        {
+          "id": "5ea0862d61850b4f2d110abe",
+          "user": "Jessie",
+          "message": "Occaecat dolor nisi aliqua aliqua nisi ea proident in occaecat cillum consectetur et."
+        },
+        {
+          "id": "5ea0862dcd92d014fd1d3180",
+          "user": "Sampson",
+          "message": "Culpa amet anim dolor cupidatat aliquip."
+        },
+        {
+          "id": "5ea0862dd2f986220ef4db42",
+          "user": "Potter",
+          "message": "In pariatur voluptate labore consectetur occaecat commodo qui consequat cillum reprehenderit nulla."
+        },
+        {
+          "id": "5ea0862dad62d55928c0c25b",
+          "user": "Rivera",
+          "message": "Velit pariatur culpa consectetur aute voluptate."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862dbf69cbcadb558c00",
+      "category": "Kombi",
+      "name": "Opel Astra Sports Tourer",
+      "image": "kombi4.jpg",
+      "price": 11900,
+      "rate": 4.42,
+      "ratesNumber": 53,
+      "ratingOption": true,
+      "shortDescription": "Practical estate with low running costs.",
+      "description": "Opel Astra Sports Tourer with a spacious boot and efficient engine. Ideal for families or long-distance travel.",
+      "specification": {
+        "engine_capacity": "1.4 Turbo",
+        "production_year": 2017,
+        "drivetrain": "FWD",
+        "fuel_type": "Petrol",
+        "mileage": "105000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "IntelliLink Infotainment",
+          "description": "Modern infotainment system with smartphone integration.",
+          "photo": "kombi_feature4.jpg"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "5ea0862d365f04ad55d6b9e3",
+      "category": "SUV",
+      "name": "Nissan Qashqai",
+      "image": "suv4.jpg",
+      "price": 17900,
+      "rate": 4.23,
+      "ratesNumber": 141,
+      "ratingOption": true,
+      "shortDescription": "Modern SUV with excellent fuel economy.",
+      "description": "Nissan Qashqai with a sleek design and advanced features. Perfect for urban driving and occasional off-road trips.",
+      "specification": {
+        "engine_capacity": "1.3 DIG-T",
+        "production_year": 2019,
+        "drivetrain": "FWD",
+        "fuel_type": "Petrol",
+        "mileage": "75000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "ProPILOT Assist",
+          "description": "Semi-autonomous driving features for enhanced safety and convenience.",
+          "photo": "suv_feature4.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d67e2ce5f911977ff",
+          "user": "Dena",
+          "message": "Laboris officia irure ex non veniam cillum duis fugiat nulla."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862ddf2a7cfe7ad12fc3",
+      "category": "Sedan",
+      "name": "Toyota Camry",
+      "image": "sedan5.jpg",
+      "price": 14900,
+      "rate": 2.59,
+      "ratesNumber": 137,
+      "ratingOption": true,
+      "shortDescription": "Reliable sedan with hybrid efficiency.",
+      "description": "Toyota Camry Hybrid with excellent fuel economy and a comfortable interior. Well-maintained with full service history.",
+      "specification": {
+        "engine_capacity": "2.5 Hybrid",
+        "production_year": 2018,
+        "drivetrain": "FWD",
+        "fuel_type": "Hybrid",
+        "mileage": "85000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Entune Infotainment",
+          "description": "User-friendly infotainment system with touchscreen and smartphone integration.",
+          "photo": "sedan_feature5.jpg"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "5ea0862d032008c57faca86c",
+      "category": "Kombi",
+      "name": "Peugeot 508 SW",
+      "image": "kombi5.jpg",
+      "price": 15900,
+      "rate": 3.97,
+      "ratesNumber": 122,
+      "ratingOption": true,
+      "shortDescription": "Stylish estate with premium features.",
+      "description": "Peugeot 508 SW with a modern design and comfortable ride. Spacious and equipped with advanced technology.",
+      "specification": {
+        "engine_capacity": "1.6 PureTech",
+        "production_year": 2019,
+        "drivetrain": "FWD",
+        "fuel_type": "Petrol",
+        "mileage": "70000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Night Vision",
+          "description": "Infrared camera system for enhanced visibility in low-light conditions.",
+          "photo": "kombi_feature5.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d285d556917cb1dfd",
+          "user": "Perez",
+          "message": "Nisi fugiat cupidatat dolor eu fugiat ipsum eu."
+        },
+        {
+          "id": "5ea0862d40cd40fc44dee9f1",
+          "user": "Obrien",
+          "message": "Consequat enim aliqua velit fugiat proident sit exercitation consectetur in commodo."
+        }
+      ]
+    }
+  ],
+  "Categories": [
+    "Sedan",
+    "Kombi",
+    "SUV"
+  ]
+}
