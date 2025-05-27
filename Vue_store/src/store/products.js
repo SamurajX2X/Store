@@ -29,22 +29,19 @@ const products = {
         GET_PRODUCTS_ERROR(state) {
             return state.productsError
         }
-    },
-    actions: {
-        FETCH_PRODUCTS({ state, commit }) {
-            // Pobieranie danych
+    }, actions: {
+        FETCH_PRODUCTS({ commit }, searchOptions = {}) {
             commit("SET_PRODUCTS_LOADING", true)
+            commit("SET_PRODUCTS_ERROR", null)
 
-            //  Clear poprzedich obiektow
-            commit("SET_PRODUCTS_LIST", [])
-
-            getProducts()
+            getProducts(searchOptions)
                 .then((data) => {
-                    commit("SET_PRODUCTS_LIST", data.products)  // Access products property
-                    commit("SET_PRODUCTS_LOADING", false)
+                    commit("SET_PRODUCTS_LIST", data.products)
                 })
                 .catch((error) => {
-                    commit("SET_PRODUCTS_ERROR", error.message || "Failed to load products")
+                    commit("SET_PRODUCTS_ERROR", error.message)
+                })
+                .finally(() => {
                     commit("SET_PRODUCTS_LOADING", false)
                 })
         }

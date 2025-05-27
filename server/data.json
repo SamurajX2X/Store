@@ -46,6 +46,7 @@
         "production_year": 2018,
         "drivetrain": "FWD",
         "fuel_type": "Diesel",
+        "transmission": "Manual",
         "mileage": "85000 km",
         "colors": [
           "white",
@@ -65,7 +66,7 @@
       "id": "5ea0862d375b0aedea67a001",
       "category": "Kombi",
       "name": "Skoda Octavia Combi",
-      "image": "kombi1.jpg",
+      "image": "Octavia.webp",
       "price": 10500,
       "rate": 2.36,
       "ratesNumber": 108,
@@ -77,6 +78,7 @@
         "production_year": 2017,
         "drivetrain": "FWD",
         "fuel_type": "Diesel",
+        "transmission": "Manual",
         "mileage": "120000 km",
         "colors": [
           "white",
@@ -114,6 +116,7 @@
         "production_year": 2019,
         "drivetrain": "AWD",
         "fuel_type": "Hybrid",
+        "transmission": "Automatic",
         "mileage": "65000 km",
         "colors": [
           "white",
@@ -145,6 +148,7 @@
         "production_year": 2020,
         "drivetrain": "RWD",
         "fuel_type": "Petrol",
+        "transmission": "Automatic",
         "mileage": "55000 km",
         "colors": [
           "white",
@@ -187,6 +191,7 @@
         "production_year": 2018,
         "drivetrain": "FWD",
         "fuel_type": "Diesel",
+        "transmission": "Automatic",
         "mileage": "95000 km",
         "colors": [
           "white",
@@ -212,7 +217,7 @@
       "id": "5ea0862d831987d0538ac6cd",
       "category": "SUV",
       "name": "Audi Q5",
-      "image": "suv2.jpg",
+      "image": "audi.webp",
       "price": 26900,
       "rate": 1.06,
       "ratesNumber": 138,
@@ -224,6 +229,7 @@
         "production_year": 2019,
         "drivetrain": "AWD",
         "fuel_type": "Petrol",
+        "transmission": "Automatic",
         "mileage": "70000 km",
         "colors": [
           "white",
@@ -264,7 +270,7 @@
       "id": "5ea0862d792fdabacd539f42",
       "category": "Sedan",
       "name": "Mercedes-Benz C-Class",
-      "image": "sedan3.jpg",
+      "image": "Cklasa.jpg",
       "price": 15900,
       "rate": 4.56,
       "ratesNumber": 48,
@@ -276,6 +282,7 @@
         "production_year": 2017,
         "drivetrain": "RWD",
         "fuel_type": "Hybrid",
+        "transmission": "Automatic",
         "mileage": "110000 km",
         "colors": [
           "white",
@@ -316,7 +323,7 @@
       "id": "5ea0862d56001dd08bbbddab",
       "category": "Kombi",
       "name": "Ford Focus Estate",
-      "image": "kombi3.jpg",
+      "image": "ford.jpg",
       "price": 13900,
       "rate": 2.44,
       "ratesNumber": 65,
@@ -328,6 +335,7 @@
         "production_year": 2019,
         "drivetrain": "FWD",
         "fuel_type": "Petrol",
+        "transmission": "Manual",
         "mileage": "80000 km",
         "colors": [
           "white",
@@ -353,7 +361,7 @@
       "id": "5ea0862d8b5c5bc19ff6ce40",
       "category": "SUV",
       "name": "Hyundai Tucson",
-      "image": "suv3.jpg",
+      "image": "tucson.jpg",
       "price": 19900,
       "rate": 2.61,
       "ratesNumber": 74,
@@ -365,6 +373,7 @@
         "production_year": 2020,
         "drivetrain": "FWD",
         "fuel_type": "Diesel",
+        "transmission": "Automatic",
         "mileage": "60000 km",
         "colors": [
           "white",
@@ -390,7 +399,7 @@
       "id": "5ea0862d1bfa8ee7e3614316",
       "category": "Sedan",
       "name": "Honda Accord",
-      "image": "sedan4.jpg",
+      "image": "accord.jpg",
       "price": 16900,
       "rate": 2.52,
       "ratesNumber": 65,
@@ -402,6 +411,7 @@
         "production_year": 2018,
         "drivetrain": "FWD",
         "fuel_type": "Petrol",
+        "transmission": "CVT",
         "mileage": "90000 km",
         "colors": [
           "white",
@@ -447,7 +457,7 @@
       "id": "5ea0862dbf69cbcadb558c00",
       "category": "Kombi",
       "name": "Opel Astra Sports Tourer",
-      "image": "kombi4.jpg",
+      "image": "astra.webp",
       "price": 11900,
       "rate": 4.42,
       "ratesNumber": 53,
@@ -459,6 +469,7 @@
         "production_year": 2017,
         "drivetrain": "FWD",
         "fuel_type": "Petrol",
+        "transmission": "Manual",
         "mileage": "105000 km",
         "colors": [
           "white",
@@ -478,7 +489,7 @@
       "id": "5ea0862d365f04ad55d6b9e3",
       "category": "SUV",
       "name": "Nissan Qashqai",
-      "image": "suv4.jpg",
+      "image": "nissan.jpeg",
       "price": 17900,
       "rate": 4.23,
       "ratesNumber": 141,
@@ -490,6 +501,7 @@
         "production_year": 2019,
         "drivetrain": "FWD",
         "fuel_type": "Petrol",
+        "transmission": "CVT",
         "mileage": "75000 km",
         "colors": [
           "white",
@@ -515,7 +527,7 @@
       "id": "5ea0862ddf2a7cfe7ad12fc3",
       "category": "Sedan",
       "name": "Toyota Camry",
-      "image": "sedan5.jpg",
+      "image": "camry.webp",
       "price": 14900,
       "rate": 2.59,
       "ratesNumber": 137,
@@ -527,6 +539,7 @@
         "production_year": 2018,
         "drivetrain": "FWD",
         "fuel_type": "Hybrid",
+        "transmission": "CVT",
         "mileage": "85000 km",
         "colors": [
           "white",
@@ -546,7 +559,7 @@
       "id": "5ea0862d032008c57faca86c",
       "category": "Kombi",
       "name": "Peugeot 508 SW",
-      "image": "kombi5.jpg",
+      "image": "peugeot.jpg",
       "price": 15900,
       "rate": 3.97,
       "ratesNumber": 122,
@@ -558,6 +571,7 @@
         "production_year": 2019,
         "drivetrain": "FWD",
         "fuel_type": "Petrol",
+        "transmission": "Automatic",
         "mileage": "70000 km",
         "colors": [
           "white",
@@ -585,7 +599,7 @@
       ]
     }
   ],
-  "Categories": [
+  "categories": [
     "Sedan",
     "Kombi",
     "SUV"

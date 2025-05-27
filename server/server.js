@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 const json = require('./data.json')
-const promotions = json.promotions
+const promotions = json.promotions || []
 const products = json.products || []
 const categories = json.categories || []
 const usersFilePath = path.join(__dirname, 'users.json');
@@ -58,7 +58,77 @@ app.get("/product/:id", (req, res) => {
 })
 
 app.get('/products', (req, res) => {
-    res.json({ products })
+    const { name, category, fuel_type, drivetrain, transmission, min_price, max_price, _sort, _order } = req.query;
+    console.log('Search params:', req.query);
+
+    let filteredProducts = [...products];
+
+    if (name) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.name.toLowerCase().includes(name.toLowerCase())
+        );
+    }
+
+    if (category) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.category === category
+        );
+    }
+
+    if (fuel_type) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.specification && product.specification.fuel_type === fuel_type
+        );
+    }
+
+    if (drivetrain) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.specification && product.specification.drivetrain === drivetrain
+        );
+    }
+
+    if (transmission) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.specification && product.specification.transmission === transmission
+        );
+    }
+
+    if (min_price) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.price >= parseInt(min_price)
+        );
+    }
+
+    if (max_price) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.price <= parseInt(max_price)
+        );
+    }
+
+    if (_sort && _order) {
+        filteredProducts.sort((a, b) => {
+            let aVal = a[_sort];
+            let bVal = b[_sort];
+
+            if (typeof aVal === 'string') {
+                aVal = aVal.toLowerCase();
+                bVal = bVal.toLowerCase();
+            }
+
+            if (_order === 'asc') {
+                if (aVal < bVal) return -1;
+                if (aVal > bVal) return 1;
+                return 0;
+            } else {
+                if (aVal < bVal) return 1;
+                if (aVal > bVal) return -1;
+                return 0;
+
+            }
+        });
+    }
+
+    res.json({ products: filteredProducts });
 })
 
 app.get('/categories', (req, res) => {

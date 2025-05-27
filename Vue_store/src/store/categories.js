@@ -35,7 +35,7 @@ const categories = {
             commit("SET_CATEGORIES_LOADING", true)
             getCategories()
                 .then(response => {
-                    commit("SET_CATEGORIES_LIST", response.data)
+                    commit("SET_CATEGORIES_LIST", response.categories)
                 })
                 .catch(error => {
                     commit("SET_CATEGORIES_ERROR", error)
