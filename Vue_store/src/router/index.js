@@ -29,8 +29,8 @@ const router = createRouter({
       component: LoginView,
     },
     { path: '/product/:id', name: 'product', component: () => import('@/views/ProductView.vue') },
-    { path: '/notFound', name: 'NotFoundView', component: NotFoundView },
     { path: '/products', name: 'ProductsView', component: () => import('@/views/ProductsView.vue') },
+    { path: '/:pathMatch(.*)*', name: 'NotFoundView', component: NotFoundView },
   ]
 })
 

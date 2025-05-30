@@ -28,8 +28,6 @@ export default {
 .loader-svg {
     width: 200px;
     height: 200px;
-    /* color: #2563eb; */
     margin-bottom: 1rem;
-    /* animation: spin 2s linear infinite; */
 }
 </style>

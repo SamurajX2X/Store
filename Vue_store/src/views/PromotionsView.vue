@@ -36,19 +36,10 @@ export default {
     background: linear-gradient(to bottom, #fafafa, #f5f5f5);
 }
 
-.promotions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 @media (max-width: 768px) {
     .promotions-grid {
-        gap: 20px;
-        padding: 15px;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 }
 </style>

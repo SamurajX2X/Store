@@ -2,26 +2,22 @@ import axios from "axios"
 
 const get = (url) => new Promise((resolve, reject) => {
     setTimeout(() => {
-        axios.get(url)
+        axios.get(url, { withCredentials: true })
             .then(response => resolve(response.data))
             .catch(error => reject(error))
     }, 500 + Math.random() * 1000)
 })
 
 const post = (url, userObject) => new Promise((resolve, reject) => {
-
     setTimeout(() => {
-        axios.post(url, userObject, { withCredentials: true }) // nagłówek obsługiwany na serwerze
+        axios.post(url, userObject, { withCredentials: true })
             .then(response => {
-                console.log("data", response.data);
                 resolve(response.data)
             })
             .catch(error => {
                 reject(error)
             })
-
     }, 1000);
-
 })
 
 const getPromotions = () => get("http://localhost:3000/promotions")

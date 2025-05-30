@@ -1,61 +1,50 @@
 <template>
   <div>
     <h1>Products Search</h1>
-    
-    <form @submit="onSubmit" class="search-form">      
+      <form @submit="onSubmit" class="search-form">      
       <div class="form-group">
         <label>Product Name:</label>
-        <input v-model="searchName" placeholder="Search products..." />
+        <input v-model="name" placeholder="Search products..." />
       </div>
       
       <div class="form-group">
         <label>Category:</label>
-        <select v-model="searchCategory">
+        <select v-model="category">
           <option value="">All Categories</option>
-          <option v-for="category in categories" :key="category" :value="category">
-            {{ category }}
+          <option v-for="cat in categories" :key="cat" :value="cat">
+            {{ cat }}
           </option>
         </select>
       </div>
       
       <div class="form-group">
         <label>Fuel Type:</label>
-        <select v-model="searchFuelType">
+        <select v-model="fuelType">
           <option value="">All Fuel Types</option>
-          <option v-for="fuelType in fuelTypes" :key="fuelType" :value="fuelType">
-            {{ fuelType }}
+          <option v-for="fuel in fuelTypes" :key="fuel" :value="fuel">
+            {{ fuel }}
           </option>
         </select>
       </div>
       
       <div class="form-group">
         <label>Drivetrain:</label>
-        <select v-model="searchDrivetrain">
+        <select v-model="drivetrain">
           <option value="">All Drivetrains</option>
-          <option v-for="drivetrain in drivetrains" :key="drivetrain" :value="drivetrain">
-            {{ drivetrain }}
+          <option v-for="drive in drivetrains" :key="drive" :value="drive">
+            {{ drive }}
           </option>
         </select>
       </div>
       
       <div class="form-group">
         <label>Transmission:</label>
-        <select v-model="searchTransmission">
+        <select v-model="transmission">
           <option value="">All Transmissions</option>
-          <option v-for="transmission in transmissions" :key="transmission" :value="transmission">
-            {{ transmission }}
+          <option v-for="trans in transmissions" :key="trans" :value="trans">
+            {{ trans }}
           </option>
         </select>
-      </div>
-      
-      <div class="form-group">
-        <label>Min Price:</label>
-        <input v-model="minPrice" type="number" placeholder="Min price" />
-      </div>
-      
-      <div class="form-group">
-        <label>Max Price:</label>
-        <input v-model="maxPrice" type="number" placeholder="Max price" />
       </div>
       
       <div class="form-group">
@@ -66,10 +55,9 @@
           </option>
         </select>
       </div>
-      
-      <div class="form-actions">
-        <button type="submit">Search</button>
-        <button type="button" @click="clearFilters">Clear Filters</button>
+        <div class="form-actions">
+        <button type="submit" class="btn">Search</button>
+        <button type="button" class="btn btn-secondary" @click="clearFilters">Clear Filters</button>
       </div>
     </form>
 
@@ -98,27 +86,23 @@ export default {
   components: {
     AppLoader,
     ProductTile
-  },
-  name: "ProductsView",
-  data() {
+  },  name: "ProductsView",  data() {
     return {
-      searchName: "",
-      searchCategory: "",
-      searchFuelType: "",
-      searchDrivetrain: "",
-      searchTransmission: "",
-      minPrice: "",
-      maxPrice: "",
-      sortOption: "price_asc",
+      name: "",
+      category: "",
+      fuelType: "",
+      drivetrain: "",
+      transmission: "",
+      sortOption: "name_asc",
       sortOptions: [
-        { label: "Price Low-High", value: "price_asc" },
-        { label: "Price High-Low", value: "price_desc" },
         { label: "Name A-Z", value: "name_asc" },
         { label: "Name Z-A", value: "name_desc" },
+        { label: "Price Low-High", value: "price_asc" },
+        { label: "Price High-Low", value: "price_desc" },
       ],
       fuelTypes: ["Petrol", "Diesel", "Hybrid"],
       drivetrains: ["FWD", "RWD", "AWD"],
-      transmissions: ["Manual", "Automatic", "CVT"]
+      transmissions: ["Manual", "Automatic"]
     };
   },
   computed: {
@@ -132,27 +116,24 @@ export default {
   created() {
     this.$store.dispatch("FETCH_CATEGORIES");
     this.$store.dispatch("FETCH_PRODUCTS");
-  },
-  methods: {
+  },  methods: {
     onSubmit(e) {
       e.preventDefault();
       
       const [sortField, sortDirection] = this.sortOption.split('_');
       
       const searchOptions = {
-        name: this.searchName,
-        category: this.searchCategory,
-        fuel_type: this.searchFuelType,
-        drivetrain: this.searchDrivetrain,
-        transmission: this.searchTransmission,
-        min_price: this.minPrice,
-        max_price: this.maxPrice,
+        name: this.name,
+        category: this.category,
+        fuel_type: this.fuelType,
+        drivetrain: this.drivetrain,
+        transmission: this.transmission,
         _sort: sortField,
         _order: sortDirection
       };
       
       Object.keys(searchOptions).forEach(key => {
-        if (searchOptions[key] === "" || searchOptions[key] === null || searchOptions[key] === undefined) {
+        if (searchOptions[key] == null || searchOptions[key] === "") {
           delete searchOptions[key];
         }
       });
@@ -160,15 +141,12 @@ export default {
       this.$store.dispatch("FETCH_PRODUCTS", searchOptions);
     },
     clearFilters() {
-      this.searchName = "";
-      this.searchCategory = "";
-      this.searchFuelType = "";
-      this.searchDrivetrain = "";
-      this.searchTransmission = "";
-      this.minPrice = "";
-      this.maxPrice = "";
-      this.sortOption = "price_asc";
-      
+      this.name = "";
+      this.category = "";
+      this.fuelType = "";
+      this.drivetrain = "";
+      this.transmission = "";
+      this.sortOption = "name_asc";
       this.$store.dispatch("FETCH_PRODUCTS");
     }
   }
@@ -176,106 +154,14 @@ export default {
 </script>
 
 <style scoped>
-.search-form {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  align-items: end;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #374151;
-  font-size: 14px;
-}
-
-.form-group input,
-.form-group select {
-  padding: 12px;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.2s;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-.form-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-button {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-button:hover {
-  background-color: var(--secondary);
-  transform: translateY(-2px);
-}
-
-button[type="button"] {
-  background-color: #6b7280;
-}
-
-button[type="button"]:hover {
-  background-color: #4b5563;
-}
-
-.results-info {
-  margin-bottom: 20px;
-  padding: 15px;
-  background: #f3f4f6;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 500;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.error {
-  color: #dc2626;
-  text-align: center;
-  padding: 2rem;
-  background: #fee2e2;
-  border-radius: 8px;
+.search-form .form-actions {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {
-  .search-form {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-  
-  .form-actions {
+  .search-form .form-actions {
     flex-direction: column;
   }
 }

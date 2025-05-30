@@ -8,8 +8,12 @@
 </template>
 
 <script>
+import AppLoader from '@/components/AppLoader.vue'
 export default {
     name: "PromotionTile",
+    components: {
+        AppLoader
+    },
     props: {
         promotion: {
             type: Object,

@@ -1,34 +1,44 @@
-<template>
-  <div class="register-view">
-    <h1>Register</h1>
+<template>  <div class="register-view">
+    <div class="form-container">
+      <h1>Register</h1>
 
-    <AppLoader v-if="loading" />
-
-    <div v-show="exists" class="message">
-      <h1>Info</h1>
-      <p>User już istnieje</p>
-    </div>
-
-    <div v-show="registered" class="message success">
-      <h1>Success</h1>
-      <p>User został zarejestrowany</p>
-    </div>
-
-    <form @submit="onSubmit" v-show="!exists && !registered">
-      <div v-show="error" class="error-message">{{ error }}</div>
-
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input id="email" v-model="email" type="email" placeholder="Enter your email" required />
+      <div v-show="exists" class="info-message">
+        <h2>User Already Exists</h2>
+        <p>A user with this email already exists.</p>
+        <router-link to="/register" class="btn">Try Again</router-link>
       </div>
 
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input id="password" v-model="password" type="password" placeholder="Enter your password" required />
+      <div v-show="registered" class="success-message">
+        <h2>Registration Successful!</h2>
+        <p>Your account has been created successfully.</p>
+        <router-link to="/login" class="btn">Go to Login</router-link>
       </div>
 
-      <button type="submit" :disabled="!disabled">Register</button>
-    </form>
+      <form @submit="onSubmit" v-show="!exists && !registered">
+        <div v-show="error" class="error-message">{{ error }}</div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" v-model="email" type="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input id="password" v-model="password" type="password" placeholder="Enter your password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input id="confirmPassword" v-model="confirmPassword" type="password" placeholder="Confirm your password" required />
+        </div>        <div class="form-actions">
+          <button type="submit" class="btn" :disabled="!disabled || loading">
+            <div v-if="loading" class="btn-loader"></div>
+            <span v-if="!loading">Register</span>
+            <span v-else>Creating account...</span>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -44,6 +54,7 @@ export default {
       error: "",
       email: "",
       password: "",
+      confirmPassword: "",
       exists: false,
       registered: false,
       loading: false
@@ -60,33 +71,23 @@ export default {
 
       if (this.password.length < 3) {
         this.error = "hasło musi mieć minimum 3 znaki";
+      } else if (this.password !== this.confirmPassword) {
+        this.error = "Passwords do not match";
       } else {
-        this.error = "";
-        this.loading = true;
-
-        // do funkcji przekazujemy obiekt z danymi usera
-        registerUser({ email: this.email, password: this.password })
+        this.error = "";        this.loading = true;        registerUser({ email: this.email, password: this.password })
           .then((data) => {
-            /* tu kluczowa sprawa, do zsynchronizowania z odpowiedzią serwera:
-            na jej podstawie decydujemy czy formularz ma pozostać czy zniknąć
-            bo user istnieje już lub nie 
-            */
             if (data.status === "exists") {
               this.exists = true;
               this.registered = false;
             } else if (data.status === "registered") {
               this.registered = true;
               this.exists = false;
-            }
-          })
+            }          })
           .catch((err) => {
-            // w wypadku błędu zakładamy, że user się nie zarejestrował
             this.registered = false;
             this.exists = false;
             this.error = "user nie zarejestrowany";
-          })
-          .finally(() => {
-            // w obu wypadkach zatrzymujemy loader
+          })          .finally(() => {
             this.loading = false;
           });
       }
@@ -97,59 +98,38 @@ export default {
 
 <style scoped>
 .register-view {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 2rem 1rem;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark);
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:disabled {
-  background-color: #ccc;
+.btn:disabled {
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
-.error-message {
-  color: #dc2626;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #fee2e2;
-  border-radius: 4px;
+.btn-loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-.message {
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  background-color: #f3f4f6;
-}
-
-.success {
-  background-color: #ecfdf5;
-  border-color: #10b981;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>

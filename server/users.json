@@ -1,16 +1,24 @@
 {
   "users": [
     {
-      "email": "aaaa@aaa.pl",
-      "password": "aaa"
-    },
-    {
       "email": "bbb@bbb.com",
       "password": "bbb"
     },
     {
-      "email": "huj@huj.pl",
-      "password": "huj"
+      "email": "hh@ss",
+      "password": "sss"
+    },
+    {
+      "email": "bbb@a.pl",
+      "password": "zaq"
+    },
+    {
+      "email": "aaaa@aaa.pl",
+      "password": "aaa"
+    },
+    {
+      "email": "bbb@bbb.pl",
+      "password": "bbb"
     }
   ]
 }

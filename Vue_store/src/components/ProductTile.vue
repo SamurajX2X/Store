@@ -1,11 +1,12 @@
 <template>
-    <RouterLink :to="`/product/${product.id}`" class="product-tile">
+    <AppLoader v-if="imageLoading" />
+    <RouterLink v-show="!imageLoading" :to="`/product/${product.id}`" class="product-tile">
         <div class="product-image">
-            <img :src="productImage" :alt="product.name">
+            <img :src="productImage" :alt="product.name" @load="onImageLoad" @error="onImageError" />
         </div>
         <div class="product-info">
             <div class="product-name">{{ product.name || 'Product Name' }}</div>
-            <div class="product-price">{{ formatPrice(product.price) || '$0.00' }}</div>
+            <div class="product-price">{{ formatPrice(product.price) }}</div>
             <AppRating v-if="product.rate" :rating="product.rate" />
         </div>
     </RouterLink>
@@ -13,15 +14,26 @@
 
 <script>
 import AppRating from '@/components/AppRating.vue'
+import AppLoader from '@/components/AppLoader.vue'
 
 export default {
     name: 'ProductTile',
-    components: { AppRating },
+    components: { 
+        AppRating,
+        AppLoader 
+    },
     props: {
         product: {
             type: Object,
             required: true
         }
+    },
+    data() {
+        return {
+            imageLoading: true,
+            timeoutCompleted: false,
+            imageLoaded: false
+        };
     },
     computed: {
         productImage() {
@@ -33,9 +45,33 @@ export default {
     },
     methods: {
         formatPrice(price) {
-            if (!price) return '€0.00'
+            if (price === null || typeof price === 'undefined') return '€0.00';
             return `€${Number(price).toFixed(2)}`
+        },
+        onImageLoad() {
+            this.imageLoaded = true;
+            this.checkIfReady();
+        },
+        onImageError() {
+            this.imageLoaded = true;
+            this.checkIfReady();
+        },
+        checkIfReady() {
+            if (this.timeoutCompleted && this.imageLoaded) {
+                this.imageLoading = false;
+            }
         }
+    },
+    mounted() {
+        const img = new Image();
+        img.src = this.productImage;
+        img.onload = this.onImageLoad;
+        img.onerror = this.onImageError;
+
+        setTimeout(() => {
+            this.timeoutCompleted = true;
+            this.checkIfReady();
+        }, Math.random() * 1000) + 500;
     }
 }
 </script>
@@ -60,6 +96,7 @@ export default {
 .product-image {
     height: 200px;
     overflow: hidden;
+    background-color: #f0f0f0;
 }
 
 .product-image img {

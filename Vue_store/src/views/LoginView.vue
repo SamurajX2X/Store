@@ -1,41 +1,44 @@
-<template>
-  <div class="login-view">
-    <h1>Login</h1>
-    
-    <AppLoader v-if="loading" />
-    
-    <div v-if="logged" class="message success">
-      <h2>Logged in successfully!</h2>
-      <p>You are now logged in as {{ email }}</p>
+<template>  <div class="login-view">
+    <div class="form-container">
+      <h1>Login</h1>
+      
+      <div v-if="logged" class="success-message">
+        <h2>Logged in successfully!</h2>
+        <p>You are now logged in as {{ email }}</p>
+      </div>
+      
+      <form v-else @submit="onSubmit">
+        <div v-show="error" class="error-message">{{ error }}</div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input 
+            id="email" 
+            v-model="email" 
+            type="email" 
+            placeholder="Enter your email" 
+            required 
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input 
+            id="password" 
+            v-model="password" 
+            type="password" 
+            placeholder="Enter your password" 
+            required 
+          />
+        </div>        <div class="form-actions">
+          <button type="submit" class="btn" :disabled="!disabled || loading">
+            <div v-if="loading" class="btn-loader"></div>
+            <span v-if="!loading">Login</span>
+            <span v-else>Logging in...</span>
+          </button>
+        </div>
+      </form>
     </div>
-    
-    <form v-else @submit="onSubmit">
-      <div v-show="error" class="error-message">{{ error }}</div>
-      
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input 
-          id="email" 
-          v-model="email" 
-          type="email" 
-          placeholder="Enter your email" 
-          required 
-        />
-      </div>
-      
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input 
-          id="password" 
-          v-model="password" 
-          type="password" 
-          placeholder="Enter your password" 
-          required 
-        />
-      </div>
-
-      <button type="submit" :disabled="!disabled">Login</button>
-    </form>
   </div>
 </template>
 
@@ -59,30 +62,29 @@ export default {
       return this.email.length > 3;
     }
   },
-  methods: {
-    onSubmit(e) {
+  methods: {    onSubmit(e) {
       e.preventDefault();
-      
-      /* po przejściu walidacji (zachowany format emaila - regex)
-      uruchamiamy funkcję ze store User
-      jeśli otrzymamy z serwera email zalogowanego usera
-      to znaczy, że można wykonywać działania na kliencie
-      np przekierować się na inny adres
-      logika pozostałych komunikatów musi być oparta o serwer
-      */
+      this.loading = true;
 
       this.$store.dispatch("LOGIN_USER", {email: this.email, password: this.password })
-        .then(() => {
-          const { email } = this.$store.getters.GET_CURRENT_USER;
+        .then((response) => {
+          const currentUser = this.$store.getters.GET_CURRENT_USER;
 
-          if (email) this.logged = true;
-          else this.logged = false;
-
-          //this.$router.push("/");
+          if (currentUser && currentUser.email) {
+            this.logged = true;
+            setTimeout(() => {
+              this.$router.push("/");
+            }, 1500);
+          } else {
+            this.error = "Login failed - invalid credentials";
+            this.logged = false;
+          }
+          this.loading = false;
         })
-        .catch(() => {
-          this.error = "niepoprawne dane logowania";
+        .catch((error) => {
+          this.error = "Login failed - please try again";
           this.logged = false;
+          this.loading = false;
         });
     }
   }
@@ -91,59 +93,38 @@ export default {
 
 <style scoped>
 .login-view {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 2rem 1rem;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark);
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:disabled {
-  background-color: #ccc;
+.btn:disabled {
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
-.error-message {
-  color: #dc2626;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #fee2e2;
-  border-radius: 4px;
+.btn-loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-.message {
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  background-color: #f3f4f6;
-}
-
-.success {
-  background-color: #ecfdf5;
-  border-color: #10b981;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>

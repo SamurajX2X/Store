@@ -23,9 +23,23 @@
       "color": "#9abcc4",
       "finishDate": 1591187930429,
       "items": [
-        "5ea08604dd0221b86c6fea89",
-        "5ea0862d032008c57faca86c",
-        "5ea0862d6851b168cc811c44"
+        "5ea0862d6851b168cc811c44",
+        "5ea0862d831987d0538ac6cd",
+        "5ea0862dbbd2520b2c9b7570"
+      ]
+    },
+    {
+      "id": "3",
+      "header": "Wiaaanter sale!",
+      "description": "Only now 40% discount on winter products",
+      "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": "desert.jpeg",
+      "color": "#a5cadf",
+      "finishCondition": "while stocks last",
+      "items": [
+        "5ea0862d154e976e7f1c7989",
+        "5ea0862d154e976e7f1c7989",
+        "5ea0862d375b0aedea67a001"
       ]
     }
   ],
@@ -595,6 +609,243 @@
           "id": "5ea0862d40cd40fc44dee9f1",
           "user": "Obrien",
           "message": "Consequat enim aliqua velit fugiat proident sit exercitation consectetur in commodo."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862dbf69cbcadb558c15",
+      "category": "Sedan",
+      "name": "BMW M2 Competition",
+      "image": "m2.jpg",
+      "price": 45900,
+      "rate": 4.9,
+      "ratesNumber": 87,
+      "ratingOption": true,
+      "shortDescription": "High-performance compact coupe with exceptional handling.",
+      "description": "BMW M2 Competition with a twin-turbo inline-6 engine delivering raw driving excitement. Perfect for enthusiasts seeking track-ready performance with daily usability.",
+      "specification": {
+        "engine_capacity": "3.0 Twin Turbo",
+        "production_year": 2020,
+        "drivetrain": "RWD",
+        "fuel_type": "Petrol",
+        "transmission": "Manual",
+        "mileage": "35000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "M Differential",
+          "description": "Active M differential for enhanced traction and cornering precision.",
+          "photo": "bmw_feature1.jpg"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "5ea0862d7f2a9cfe8bd13fc4",
+      "category": "Sedan",
+      "name": "BMW M4 Competition",
+      "image": "m4.jpg",
+      "price": 67900,
+      "rate": 4.7,
+      "ratesNumber": 124,
+      "ratingOption": true,
+      "shortDescription": "Powerful M coupe with cutting-edge technology.",
+      "description": "BMW M4 Competition featuring a twin-turbo V6 engine with 510hp. Combines luxury with track-focused performance and advanced driver assistance systems.",
+      "specification": {
+        "engine_capacity": "3.0 Twin Turbo V6",
+        "production_year": 2021,
+        "drivetrain": "RWD",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic",
+        "mileage": "25000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "Carbon Fiber Roof",
+          "description": "Lightweight carbon fiber roof for reduced weight and lower center of gravity.",
+          "photo": "bmw_feature2.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d9f3b1e5c2a789def",
+          "user": "Marcus",
+          "message": "Incredible performance and handling, worth every penny."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d8c4d5ef9a1b23456",
+      "category": "Sedan",
+      "name": "BMW M5 Competition",
+      "image": "m5.jpg",
+      "price": 89900,
+      "rate": 4.85,
+      "ratesNumber": 156,
+      "ratingOption": true,
+      "shortDescription": "Ultimate performance sedan with AWD system.",
+      "description": "BMW M5 Competition with 617hp twin-turbo V8 engine and M xDrive all-wheel drive. The perfect blend of luxury sedan comfort and supercar performance.",
+      "specification": {
+        "engine_capacity": "4.4 Twin Turbo V8",
+        "production_year": 2022,
+        "drivetrain": "AWD",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic",
+        "mileage": "18000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "M xDrive System",
+          "description": "Intelligent all-wheel drive system with rear-wheel drive mode.",
+          "photo": "bmw_feature3.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d1a4f7b8e3c567890",
+          "user": "Stefan",
+          "message": "Best performance sedan on the market, absolutely stunning."
+        },
+        {
+          "id": "5ea0862d2b5e8c9f4d678901",
+          "user": "Alexandra",
+          "message": "The sound of that V8 is music to my ears."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d3f6a1b2c5d789012",
+      "category": "Sedan",
+      "name": "BMW E39 M5",
+      "image": "e39.jpg",
+      "price": 35900,
+      "rate": 4.6,
+      "ratesNumber": 203,
+      "ratingOption": true,
+      "shortDescription": "Classic M5 with naturally aspirated V8 engine.",
+      "description": "Legendary BMW E39 M5 with the iconic S62 5.0L V8 engine. A true driver's car representing the golden era of BMW M performance vehicles.",
+      "specification": {
+        "engine_capacity": "5.0 V8",
+        "production_year": 2002,
+        "drivetrain": "RWD",
+        "fuel_type": "Petrol",
+        "transmission": "Manual",
+        "mileage": "145000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "S62 V8 Engine",
+          "description": "High-revving naturally aspirated V8 with 400hp and incredible sound.",
+          "photo": "bmw_feature4.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d4c7d2e3f6a890123",
+          "user": "Klaus",
+          "message": "Nothing beats the sound of a naturally aspirated V8."
+        },
+        {
+          "id": "5ea0862d5d8e3f4a7b901234",
+          "user": "Roberto",
+          "message": "Classic M5, pure driving perfection."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d6e9f4a5b8c012345",
+      "category": "Sedan",
+      "name": "BMW E30 M3",
+      "image": "e30.jpg",
+      "price": 75900,
+      "rate": 4.95,
+      "ratesNumber": 89,
+      "ratingOption": true,
+      "shortDescription": "Legendary homologation special with racing heritage.",
+      "description": "Iconic BMW E30 M3 with the legendary S14 engine. A true collector's car and the foundation of BMW's M division success in motorsport.",
+      "specification": {
+        "engine_capacity": "2.3 S14",
+        "production_year": 1989,
+        "drivetrain": "RWD",
+        "fuel_type": "Petrol",
+        "transmission": "Manual",
+        "mileage": "125000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "S14 Racing Engine",
+          "description": "High-revving 4-cylinder engine derived from BMW's Formula 1 technology.",
+          "photo": "bmw_feature5.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d7f0a5b6c9d123456",
+          "user": "Hans",
+          "message": "The holy grail of BMW M cars, absolutely pristine example."
+        }
+      ]
+    },
+    {
+      "id": "5ea0862d8a1b6c7d0e234567",
+      "category": "Sedan",
+      "name": "BMW E34 M5",
+      "image": "e34.jpg",
+      "price": 42900,
+      "rate": 4.7,
+      "ratesNumber": 167,
+      "ratingOption": true,
+      "shortDescription": "First M5 with V8 power and timeless design.",
+      "description": "BMW E34 M5 featuring the S38 3.8L inline-6 engine. The perfect balance of performance and elegance that defined the modern sports sedan category.",
+      "specification": {
+        "engine_capacity": "3.8 S38",
+        "production_year": 1994,
+        "drivetrain": "RWD",
+        "fuel_type": "Petrol",
+        "transmission": "Manual",
+        "mileage": "165000 km",
+        "colors": [
+          "white",
+          "black"
+        ]
+      },
+      "features": [
+        {
+          "name": "S38 Inline-6",
+          "description": "High-performance naturally aspirated inline-6 with motorsport heritage.",
+          "photo": "bmw_feature6.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": "5ea0862d9b2c7d8e1f345678",
+          "user": "Wolfgang",
+          "message": "Classic BMW engineering at its finest."
+        },
+        {
+          "id": "5ea0862d0c3d8e9f2a456789",
+          "user": "Maria",
+          "message": "Timeless design and incredible driving dynamics."
         }
       ]
     }

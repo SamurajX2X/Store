@@ -13,7 +13,13 @@
                     active-class="router-link-active">notFoundPage</router-link>
 
 
-                <div v-if="user" class="user-actions">
+                <div v-if="userLoading" class="auth-loading">
+                    <!-- <div class="auth-loader"></div>
+                    <span class="loading-text">Loading...</span> -->
+
+                    <AppLoader style="width: 50px; height: 30px;"/>
+                </div>
+                <div v-else-if="user" class="user-actions">
                     <span class="welcome-message">Welcome, {{ user.email }}</span>
                     <button @click="logout" class="logout-btn">Logout</button>
                 </div>
@@ -27,28 +33,44 @@
 </template>
 
 <script>
+import { getCurrentUser } from '@/api';
+import { mapGetters } from 'vuex';
+import AppLoader from '@/components/AppLoader.vue';
+import App from '@/App.vue';
+
 export default {
-    computed: {
+    name: 'Header',
+    components: {
+        AppLoader,
+        
+    },
+
+    computed:  {
         user() {
             return this.$store.getters.GET_CURRENT_USER;
         },
         userLoading() {
             return this.$store.getters.GET_CURRENT_USER_LOADING;
-        }
+        },
+        ...mapGetters({
+        GET_CURRENT_USER: 'GET_CURRENT_USER',
+        GET_CURRENT_USER_LOADING: 'GET_CURRENT_USER_LOADING'
+    })
     },
     methods: {
         logout() {
             this.$store.dispatch("LOGOUT_USER")
                 .then(() => {
-                    this.$router.push("/login"); // redirect
+                    this.$router.push("/login");
                 });
         }
-    }
+    },
+
+
 }
 </script>
 
 <style scoped>
-/* Auth-specific styles */
 .register-btn {
     background-color: var(--primary);
     color: white !important;
@@ -90,5 +112,31 @@ export default {
 .auth-links {
     display: flex;
     gap: 1rem;
+}
+
+.auth-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.loading-text {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.auth-loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(37, 99, 235, 0.3);
+    border-top: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 </style>
